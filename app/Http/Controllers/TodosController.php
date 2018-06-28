@@ -85,7 +85,7 @@ class TodosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
@@ -96,6 +96,9 @@ class TodosController extends Controller
      */
     public function destroy($id)
     {
-        return 211212;
+        $todo = Todo::find($id);
+        $todo->delete();
+
+        return redirect('/')->with('success', 'Todo Deletado com sucesso!');
     }
 }
