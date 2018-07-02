@@ -9,7 +9,7 @@
     <hr>
     <p>{{$todo->body}}</p>
     <br><br>
-    <a href="" class="btn btn-warning">Edit</a><br>
+    <a href="/todo/{{$todo->id}}/edit" class="btn btn-warning">Edit</a><br>
     {{ Form::open(array('action' => ['TodosController@destroy', $todo->id], 'method' => 'POST')) }}
         {{ Form::hidden('_method', 'DELETE')}}
         {{ Form::bsSubmit('Delete',['class' => 'btn btn-danger form-control']) }}
